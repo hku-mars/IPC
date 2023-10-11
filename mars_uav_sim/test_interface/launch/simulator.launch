@@ -1,0 +1,25 @@
+<launch>
+  <!-- size of map, change the size in x, y, z according to your application -->
+  <arg name="map_size_x" value="40.0"/>
+  <arg name="map_size_y" value="20.0"/>
+  <arg name="map_size_z" value=" 5.0"/>
+
+  <!-- topic of your odometry such as VIO or LIO -->
+  <arg name="odom_topic" value="/lidar_slam/odom" />
+
+  
+
+  <!-- use simulator -->
+  <include file="$(find test_interface)/launch/simulator.xml">
+    <arg name="map_size_x_" value="$(arg map_size_x)"/>
+    <arg name="map_size_y_" value="$(arg map_size_y)"/>
+    <arg name="map_size_z_" value="$(arg map_size_z)"/>
+    <arg name="odometry_topic" value="$(arg odom_topic)" />
+  </include>
+
+    <!--node name="test_interface_node1" pkg="test_interface" type="test_interface_node" output="screen" /-->
+
+     <node name="rvizvisualisation" pkg="rviz" type="rviz" output="screen" args="-d $(find test_interface)/config/default.rviz" />
+  <node name="fpv" pkg="rviz" type="rviz" output="screen" args="-d $(find test_interface)/config/fpv.rviz" />
+
+</launch>

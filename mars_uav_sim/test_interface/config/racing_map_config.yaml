@@ -1,0 +1,10 @@
+racing_map:
+  resolution: 0.03
+  pub_freq: 10.0
+  waypoints:
+    x: [10,3, -8, 0,5]
+    y: [0 ,5, 2, -10,-5]
+    z: [3,2, 3,1.5,2]
+    # the yaw angle in degree
+    yaw: [90, 0 , 45,0,45,0]
+  size: 1.2

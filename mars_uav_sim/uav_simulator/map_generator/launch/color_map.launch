@@ -1,0 +1,15 @@
+<launch>
+    <node pkg="map_generator" type="color_map_for_pointcloud" name="color_map_for_pointcloud" output="screen">
+        <remap from="~cloud" to="/map_generator/global_cloud"></remap>
+        <param name="color/min_height" value="-1" type="double"></param>
+        <param name="color/max_height" value="4.5" type="double"></param>
+        <param name="color/map_type_name" value="Gray" type="string"></param>
+<!--        <param name="color/map_type_name" value="Gray" type="string"></param>-->
+        <param name="color/frame_id" value="world" type="string"></param>
+        <param name="color/publish_rate" value="0.1" type="double"></param>
+        <param name="color/inverse_color" value="false" type="bool"></param>
+    </node>
+
+
+
+</launch>

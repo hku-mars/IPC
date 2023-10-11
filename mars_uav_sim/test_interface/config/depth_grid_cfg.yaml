@@ -1,0 +1,13 @@
+depth_grid:
+  odom_topic: "/lidar_slam/odom"
+  cloud_topic: "/pcl_render_node/cloud"
+#  cloud_topic: "/global_cloud"
+  bisec_num: 10
+  resolution: 0.1
+  sensing_range: 10
+  point_filt_num: 1
+#  angular_reso: 0.1
+  vertical_fov: 90
+  horizon_fov: 90
+#  vertical_fov: 77.2
+#  horizon_fov: 70.4

@@ -1,0 +1,9 @@
+racing_map:
+  pub_freq: 10.0
+  waypoitns:
+    x: [ 1, 2 ,3 ]
+    y: [ 2 ,3, 6 ]
+    z: [ 1,2,1.5 ]
+    # the yaw angle in degree
+    yaw: [ 0, 0 ,0 ]
+  size: 2.0

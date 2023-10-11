@@ -1,0 +1,68 @@
+#----------------- MPC param -----------------#
+simulation:    true
+perfect_simu:  false
+frequency:     100.0
+ctrl_delay:    0.0
+sfc_dis:       0.3
+
+thrust_limit:  0.4
+hover_esti:    false
+hover_perc:    0.7
+
+yaw_ctrl_flag: true
+yaw_gain:      0.5
+
+goal_x:        0.0
+goal_y:        0.0
+goal_z:        1.0
+
+astar:
+  resolution:  0.1
+  map_x_size:  20.0
+  map_y_size:  20.0
+  map_z_size:  3.0
+  expand_dyn:  0.5
+  expand_fix:  0.3
+
+fsm:
+  ref_dis:     6
+  path_dis:    0.05
+
+mpc:
+  horizon:     15
+  step:        0.1
+  # ctrl_delay:  0   # n step
+
+  R_p:         1000.0
+  R_v:         0.0
+  R_a:         0.0
+  R_u:         0.0
+  R_u_con:     0.2
+  R_pN:        2000.0
+  R_vN:        1000.0
+  R_aN:        1000.0
+
+  D_x:         0.0
+  D_y:         0.0
+  D_z:         0.0
+
+  vx_min:     -10.0
+  vy_min:     -10.0
+  vz_min:     -10.0
+  vx_max:      10.0
+  vy_max:      10.0
+  vz_max:      10.0
+
+  ax_min:     -20.0
+  ay_min:     -20.0
+  az_min:     -10.0
+  ax_max:      20.0
+  ay_max:      20.0
+  az_max:      20.0
+
+  ux_min:     -50.0
+  uy_min:     -50.0
+  uz_min:     -50.0
+  ux_max:      50.0
+  uy_max:      50.0
+  uz_max:      50.0

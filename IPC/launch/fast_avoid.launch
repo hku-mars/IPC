@@ -1,0 +1,24 @@
+<launch>
+    <node pkg="ipc" type="fast_avoid" name="fast_avoid" output="screen">
+        <param name="resolusion"   value="0.1"/>
+
+        <param name="obs_dis"      value="2.0"/>
+        <param name="obs_v"        value="10.0"/>
+
+        <param name="obs_x"        value="7.0"/>
+        <param name="obs_y"        value="0.0"/>
+        <param name="obs_z"        value="2.0"/>
+
+        <param name="obs_l"        value="0.2"/>
+        <param name="obs_w"        value="0.2"/>
+        <param name="obs_h"        value="4.0"/>
+
+        <remap from="odom"         to="/lidar_slam/odom"/>
+        <remap from="goal"         to="/goal"/>
+        <remap from="local_pc"     to="/pcl_render_node/cloud"/>
+        <remap from="map"          to="/map/cloud"/>
+        <remap from="obs"          to="/obs/cloud"/>
+        
+    </node>
+
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+
+    <rosparam command="load" file="$(find depth_gene)/config/depth_grid_cfg.yaml"/>
+    <node pkg="depth_gene" type="depth_gene" name="depth_gene" output="screen">
+
+    </node>
+
+
+
+</launch>

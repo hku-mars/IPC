@@ -1,0 +1,70 @@
+map:
+  x_size: 40.0
+  y_size: 40.0
+  z_size: 5.0
+  ground_height: 0
+  resolution: 0.1
+  pub_freq: 1.0
+#  frame_id: "map"
+  random_seed: 609
+  # clear area for start zone or end zone
+  clear_area:
+    x: [0]
+    y: [0]
+  clear_radius: [0]
+
+
+ground:
+  enable: false
+  visual_no_ground: true
+  # Default the same as map
+#  x_size: 20.0
+#  y_size: 20.0
+  z_size: 0.0
+#  resolution: 0.1
+
+cylinder:
+  num: 0  #70
+  angle_resolution: 0.1
+  height_min: 4.0
+  height_max: 4.5
+  radius_min: 0.1
+  radius_max: 0.3
+  fix:
+    x: []
+    y: []
+#  fix:
+#    x: [-1,-0.5,-0.2, 0, 1, 2, -0.1]
+#    y: [1,1.2,0.8, 1,1,1, -9]
+
+circle:
+  num: 100
+  height_min: 1.5
+  height_max: 4.0
+  radius_min: 0.1
+  radius_max: 0.2
+  thickness_min: 0.2
+  thickness_max: 0.4
+
+pillar:
+  num: 200
+  height_min: 1.5
+  height_max: 4.0
+  width_min: 0.2
+  width_max: 0.3
+  length_min: 0.2
+  length_max: 0.3
+
+spline:
+  num: 100
+  height_min: 4.0
+  height_max: 4.5
+  # The width of the tree branch
+  radius_min: 0.05
+  radius_max: 0.1
+  bending_rate: 0.5
+  # The width of the whole tree
+  width: 3.0
+  sample_t_reso: 0.05
+  sample_theta_reso: 0.5
+  max_branch_num: 10

@@ -1,0 +1,45 @@
+<launch>
+    <arg name="init_x_" value="0.0"/>
+    <arg name="init_y_" value="0.0"/>
+    <arg name="init_z_" value="1.0"/>
+
+    <node pkg="nodelet" type="nodelet" name="manager" args="manager" output="screen">
+        <param name="num_worker_threads" value="16"/>
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="so3_quadrotor" args="load so3_quadrotor/Nodelet manager" output="screen">
+        <rosparam file="$(find test_interface)/config/so3_quadrotor.yaml"/>
+        <param name="init_x" value="$(arg init_x_)"/>
+        <param name="init_y" value="$(arg init_y_)"/>
+        <param name="init_z" value="$(arg init_z_)"/>
+        <remap from="~odom" to="/lidar_slam/odom"/>
+        <remap from="~so3cmd" to="so3_cmd"/>
+        <remap from="~imu" to="/lidar_slam/imu"/>
+        <remap from="~vis" to="vis"/>
+        <param name="odom_rate" value="100"/>
+
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="so3_controller" args="load so3_controller/Nodelet manager" output="screen">
+        <rosparam file="$(find test_interface)/config/so3_controller.yaml"/>
+        <remap from="~odom" to="/lidar_slam/odom"/>
+        <remap from="~so3cmd" to="so3_cmd"/>
+        <remap from="~imu" to="/lidar_slam/imu"/>
+        <remap from="~position_cmd" to="/planning/pos_cmd"/>
+
+    </node>
+
+
+    <node pkg="odom_visualization" name="odom_visualization" type="odom_visualization" output="screen">
+        <remap from="~odom" to="/lidar_slam/odom"/>
+        <param name="mesh_resource" value="package://odom_visualization/meshes/sphere.mesh"/>
+        <param name="tf45" value="true"/>
+        <param name="color/a" value="1.0"/>
+        <param name="color/r" value="1.0"/>
+        <param name="color/g" value="1.0"/>
+        <param name="color/b" value="1.0"/>
+        <param name="covariance_scale" value="100.0"/>
+        <param name="robot_scale" value="0.001"/>
+    </node>
+
+</launch>
