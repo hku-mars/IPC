@@ -1,0 +1,23 @@
+<launch>
+    <node pkg="ipc" type="ipc_node" name="ipc_node" output="screen">
+        <!-- publish topic -->
+        <remap from="cmd"          to="/planning/pos_cmd"/>
+        <remap from="astar_path"   to="/astar/path"/>
+        <remap from="grid_map"     to="/astar/grid_map"/>
+        <remap from="sfc"          to="/mkr_arr"/>
+        <remap from="mpc_path"     to="/mpc/path"/>
+        <remap from="px4ctrl"      to="/mavros/setpoint_raw/attitude"/>
+        <remap from="goal_pub"     to="/mpc/goal"/>
+        
+        <!-- subscribe topic -->
+        <remap from="local_pc"     to="/cloud_registered"/>
+        <remap from="odom"         to="/lidar_slam/imu_propagate"/>
+        <remap from="imu"          to="/mavros/imu/data"/>
+        <remap from="goal"         to="/goal"/>
+        <remap from="rc_in"        to="/mavros/rc/in"/>
+
+        <rosparam command="load" file="$(find ipc)/config/param_real.yaml"/>
+
+    </node>
+
+</launch>
