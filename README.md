@@ -18,6 +18,8 @@ Author: [Wenyi Liu](https://github.com/FENYUN323), [Yunfan Ren](https://github.c
 
 Paper: [Integrated Planning and Control for Quadrotor Navigation in Presence of Suddenly Appearing Objects and Disturbances](https://ieeexplore.ieee.org/abstract/document/10238764)
 
+Or see the pdf at:  [liu2023ipc.pdf](paper/liu2023ipc.pdf) 
+
 Code: [Github](https://github.com/hku-mars/IPC)
 
 Video Links: [youtube](https://www.youtube.com/watch?v=EZFxTkqqat4), [Bilibili](https://www.bilibili.com/video/BV1NM4y117TH)
@@ -48,11 +50,24 @@ Using **IPC**, the quadrotor can:
 
 Ubuntu 18.04~20.04, [ROS Installation](http://wiki.ros.org/ROS/Installation)
 
-### 2.2 PCL and Eigen
+### 2.2 PCL Eigen and fmt
 
 PCL >= 1.6, follow [PCL Installation](https://pointclouds.org)
 
 Eigen >= 3.3.4, follow [Eigen Installation](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+
+fmt: Download fmt.zip at https://github.com/hku-mars/IPC/releases/tag/v0.1.
+
+Build and install by:
+
+```bash
+mkdir build
+cd build/
+cmake -DBUILD_SHARED_LIBS=TRUE ..
+make
+sudo make install
+sudo cp /usr/local/lib/libfmt.so.8 /usr/lib
+```
 
 ### 2.3 OSQP and OSQP-Eigen
 
