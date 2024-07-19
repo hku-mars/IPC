@@ -93,6 +93,13 @@ wget https://raw.githubusercontent.com/bombela/backward-cpp/master/backward.hpp
 sudo mv backward.hpp /usr/include
 ```
 
+A print visualization tool
+
+Installation
+```
+sudo apt-get install ros-noetic-rosfmt
+```
+
 ## 3 Make
 
 ```

@@ -12,8 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
         geometry_msgs
         nav_msgs
         message_generation
+        rosfmt
         )
-find_package(fmt)
 find_package(Eigen3 REQUIRED)
 find_package(PCL REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -37,7 +37,6 @@ link_directories(${PCL_LIBRARY_DIRS})
 set(THIRD_PARTY
         ${catkin_LIBRARIES}
         ${PCL_LIBRARIES}
-        fmt::fmt
         )
 
 add_executable(random_map_node

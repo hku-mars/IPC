@@ -10,8 +10,6 @@ find_package(PCL REQUIRED)
 
 find_package(OsqpEigen REQUIRED)
 
-find_package(fmt REQUIRED)
-
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   nav_msgs
@@ -22,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   pcl_ros
   mavros
+  rosfmt
 )
 
 catkin_package(
@@ -50,7 +49,6 @@ target_link_libraries(ipc_node
   -ldw
   tbb
   OsqpEigen::OsqpEigen
-  fmt::fmt
 )
 
 add_executable(fast_avoid

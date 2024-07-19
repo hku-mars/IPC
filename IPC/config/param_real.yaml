@@ -1,5 +1,5 @@
 #----------------- MPC param -----------------#
-simulation:    true
+simulation:    false
 perfect_simu:  false
 frequency:     100.0
 ctrl_delay:    0.0

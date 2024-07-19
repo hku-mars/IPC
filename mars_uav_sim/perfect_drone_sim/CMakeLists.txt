@@ -16,13 +16,13 @@ find_package(catkin REQUIRED COMPONENTS
         quadrotor_msgs
         visualization_msgs
         message_filters
+        rosfmt
         )
 find_package(PythonLibs REQUIRED)
 
 find_package(Eigen3 REQUIRED)
 find_package(PCL REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(fmt)
 catkin_package(
         INCLUDE_DIRS include
         LIBRARIES
@@ -49,7 +49,6 @@ set(THIRD_PARTY
         ${PCL_LIBRARIES}
         ${OpenCV_LIBRARIES}
         tbb
-        fmt::fmt
         -ldw
         )
 

@@ -13,8 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
         nav_msgs
         aros_util
         message_generation
+        rosfmt
         )
-find_package(fmt)
 find_package(Eigen3 REQUIRED)
 find_package(PCL REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -40,7 +40,6 @@ set(THIRD_PARTY
         ${catkin_LIBRARIES}
         ${PCL_LIBRARIES}
         ${OpenCV_LIBRARIES}
-        fmt::fmt
         )
 
 
